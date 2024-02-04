@@ -1,0 +1,310 @@
+@media (min-width: 1980px) {
+    .slide-1 .container {
+        max-width: calc(100% - 10rem);
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+.text-purple {
+    color: #C9D3EC;
+}
+.text-dpurple {
+    color: #7971ea;
+}
+.text-orange {
+    color: #ff7764;
+}
+.trans-purple {
+    color: transparent;
+    -webkit-text-stroke: 1px #7971ea;
+}
+.trans-white {
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+}
+.bordered-btn {
+    background-color: transparent;
+    color: #7971ea;
+    border: 3px solid #7971ea;
+    transition: all 0.3s ease-in-out;
+}
+.py-10 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+#illustration
+{
+    width: 100%;
+}
+#illustration * {
+    transform-box: fill-box;
+}
+
+[id^='pink-bubble-'], [id^='blue-bubble-'] {
+    animation: 2s ease-in-out infinite alternate pulse;
+    transform-origin: center;
+}
+
+#pink-bubble {
+    animation: 4s ease-in-out infinite alternate zoom;
+    transform-origin: center;
+}
+#blue-bubble {
+    animation: 4s ease-in-out infinite alternate zoom-reverse;
+    transform-origin: center;
+}
+
+#pink-bubble-02, #blue-bubble-02 { animation-delay: 1.0s; }
+#pink-bubble-01, #blue-bubble-01 { animation-delay: 1.5s; }
+
+[id^='cog-'], #white-bubble {
+    animation: 6s ease-in-out infinite alternate pulse;
+    transform-origin: center;
+}
+
+#cogf-02 {
+    animation: 6s ease-in-out infinite alternate rotate;
+    transform-origin: center;
+}
+
+#cogf-01 {
+    animation: 4s ease-in-out infinite alternate rotate;
+    transform-origin: center;
+}
+
+#cog-04 { animation-delay: 1.6s; }
+#cog-05 { animation-delay: 1.8s; }
+#cog-06 { animation-delay: 2.0s; }
+#cog-07 { animation-delay: 2.2s; }
+#cog-08 { animation-delay: 2.4s; }
+#cog-09 { animation-delay: 2.6s; }
+#cog-10 { animation-delay: 2.8s; }
+#cog-11 { animation-delay: 3.0s; }
+#cog-12 { animation-delay: 3.2s; }
+#cog-13 { animation-delay: 3.4s; }
+#cog-14 { animation-delay: 3.6s; }
+#cog-15 { animation-delay: 3.8s; }
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes zoom {
+    0%, 100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes zoom-reverse {
+    0%, 100% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#about-section img {
+    max-height: 400px;
+}
+
+
+.why-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.why-wrapper .tab {
+    position: relative;
+    background: #fff;
+    padding: 0 20px 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.05);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.why-wrapper .tab input {
+    appearance: none;
+}
+
+.why-wrapper .tab label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.why-wrapper .tab label::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+}
+
+.why-wrapper .tab:hover label::after {
+    color: #333;;
+}
+
+.why-wrapper .tab input:checked ~ label::after {
+    transform: rotate(135deg);
+    color: #fff;
+}
+
+.why-wrapper .tab label h2 {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #3c8ce7, #00eaff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;;
+    font-size: 1.25em;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.why-wrapper .tab input:checked ~ label h2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    color: rgba(255,255,255,0.2);
+    font-size: 8rem;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.why-wrapper .tab label h3 {
+    position: relative;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #333;
+    z-index: 10;
+}
+
+.why-wrapper .tab input:checked ~ label h3 {
+    color: #fff;
+}
+
+.why-wrapper .tab .content {
+    max-height: 0;
+    transition: all 1s;
+    overflow: hidden;
+}
+
+.why-wrapper .tab input:checked ~ .content {
+    max-height: 100vh;
+
+}
+
+.why-wrapper .tab .content p {
+    position: relative;
+    padding: 10px 0;
+    color: #3f3f3f;
+    z-index: 10;
+}
+
+
+#accordion .panel{
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 20px;
+    position: relative;
+}
+#accordion .panel:before{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    border: 1px dashed #7971ea;
+    position: absolute;
+    top: 25px;
+    left: 28px;
+}
+#accordion .panel:last-child:before{ display: none; }
+#accordion .panel-heading{
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    position: relative;
+}
+#accordion .panel-title {
+    margin-bottom: 15px;
+    
+}
+#accordion .panel-title a{
+    display: block;
+    padding: 20px 30px 20px 80px;
+    margin: 0;
+    background: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #7971ea;
+    border-radius: 0;
+    position: relative;
+}
+#accordion .panel-title a.collapsed{
+    color: #000;
+}
+#accordion .panel-title a:before,
+#accordion .panel-title a.collapsed:before{
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    width: 60px;
+    height: 100%;
+    line-height: 60px;
+    background: #8a8ac3;
+    border: 1px solid #8a8ac3;
+    border-radius: 3px;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease 0s;
+}
+#accordion .panel-title a.collapsed:before{
+    content: "\f105";
+    background: #fff;
+    border: 1px solid #6e8898;
+    color: #000;
+}
+#accordion .panel-body{
+    padding: 40px 30px;
+    margin-left: 60px;
+    background: #fff;
+    border-top: none;
+    color: #6f6f6f;
+}
