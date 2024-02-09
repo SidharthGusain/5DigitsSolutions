@@ -1,3 +1,10 @@
+:root {
+  --gradient-1: linear-gradient(135deg, #ffd3a5 10%, #fd6585 100%);
+  /*   --gradient-2: linear-gradient(214deg, #8EE2F1 0%, #CDFEDF 55%); */
+  --gradient-2: linear-gradient(315deg, #8ec5fc 0%, #e0c3fc 100%);
+  --gradient-3: linear-gradient(210deg, #74ebd5 0%, #f7e8ad 100%);
+}
+
 header .site-logo img {
   max-width: 150px;
   transition: all 0.5s;
@@ -65,15 +72,15 @@ header.shrink .site-logo img {
   padding-bottom: 10rem;
 }
 
-.swiper {
+.myDesignSwiper {
   width: 100%;
 }
 
-.swiper-wrapper {
+.myDesignSwiper .swiper-wrapper {
   padding-top: 4rem;
 }
 
-.swiper-slide {
+.myDesignSwiper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -82,14 +89,14 @@ header.shrink .site-logo img {
   align-items: center;
 }
 
-.swiper-slide img {
+.myDesignSwiper .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.swiper-pagination {
+.design-swiper-pagination {
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -97,7 +104,7 @@ header.shrink .site-logo img {
   height: 7rem;
 }
 
-.swiper-pagination-bullet {
+.design-swiper-pagination .swiper-pagination-bullet {
   width: 6rem;
   height: 6rem;
   text-align: center;
@@ -109,7 +116,7 @@ header.shrink .site-logo img {
   background: linear-gradient(146deg, #f1f1f1 0, #fff 30.72%, #eeebeb 100%);
 }
 
-.swiper-pagination-bullet-active {
+.design-swiper-pagination .swiper-pagination-bullet-active {
   color: #fff;
   background: linear-gradient(146deg, #007aff 0, #7971ea 65%);
 }
@@ -421,6 +428,184 @@ header.shrink .site-logo img {
   color: #6f6f6f;
 }
 
+/* styling for about-us page */
+.single-cover .slide-1 {
+  max-height: 100%;
+}
+
+.single-cover .slide-1 h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+  line-height: 5rem;
+}
+
+.about_us__title {
+  font-size: 1.75rem;
+}
+
+.about_us__text {
+  font-size: 1.3rem;
+}
+
+#about-us-info img {
+  margin-top: 7rem;
+}
+
+.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery--grid {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-gap: 20px 70px;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 35px;
+  margin-top: 3rem;
+}
+
+.gallery__item.grad2 .card__item::before {
+  background-image: var(--gradient-2);
+}
+
+.gallery__item.grad3 .card__item::before {
+  background-image: var(--gradient-3);
+}
+
+.card__item {
+  position: relative;
+}
+
+.card__item::before {
+  background-image: var(--gradient-1);
+  border-radius: 15px;
+  box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.1);
+  bottom: 70px;
+  content: "";
+  left: -35px;
+  position: absolute;
+  right: 35px;
+  top: 0;
+}
+
+.card__item {
+  padding-bottom: 2.75rem;
+  padding-top: 60px;
+}
+
+.card__block--main {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 2px 5px 25px rgba(0, 0, 0, 0.15);
+  min-height: 280px;
+  padding: 20px;
+  padding-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.card__element--user-img img,
+.card__element--user-img svg {
+  --size: 80px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  left: 15px;
+  position: absolute;
+  top: calc(-1 * (var(--size) / 2));
+  width: var(--size);
+}
+
+.card__element--user-img svg {
+  fill: #000;
+}
+
+#user-svg01 {
+  background-color: #ffd3a5;
+}
+
+#user-svg02 {
+  background-color: #dec3fc;
+}
+
+#user-svg03 {
+  background-color: #9ceac8;
+}
+
+.card__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.card__subtitle {
+  color: hsl(210, 5%, 41%);
+  font-size: 1rem;
+  margin-top: 0.33rem;
+}
+
+.card__text {
+  font-size: 1.1rem;
+  margin-top: 0.66rem;
+}
+
+.like {
+  right: 35px;
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  padding: 0.75rem;
+}
+
+.like svg {
+  fill: #fff;
+  height: 25px;
+  width: 25px;
+}
+
+.our_tech_swiper {
+  margin-top: 7rem;
+}
+
+.our_tech_swiper .swiper-slide {
+  display: flex;
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  color: #fff;
+  padding: 65px 90px;
+  gap: 95px;
+}
+
+#our_tech_swiper01 {
+  background-color: #d8caff;
+}
+#our_tech_swiper02 {
+  background-color: #a7e9dd;
+}
+#our_tech_swiper03 {
+  background-color: #ffdbdf;
+}
+#our_tech_swiper04 {
+  background-color: #d2fba4;
+}
+
+.our_tech_swiper .swiper__title {
+  font-size: 1.75rem;
+  color: #000;
+  font-weight: bold;
+}
+.our_tech_swiper .swiper__text {
+  color: #666;
+  font-size: 1.1rem;
+}
+
 @media (min-width: 1980px) {
   .slide-1 .container {
     max-width: calc(100% - 10rem);
@@ -438,7 +623,6 @@ header.shrink .site-logo img {
 }
 
 @media (max-width: 992px) {
-  
   .slide-1 .container {
     max-width: calc(100% - 4rem);
     padding-left: 2rem;
@@ -471,9 +655,9 @@ header.shrink .site-logo img {
   #accordion .panel-title a {
     font-size: 1rem;
   }
-  
+
   .about-subtitle,
-  .swiper-slide h2 {
+  .myDesignSwiper .swiper-slide h2 {
     font-size: 1.5rem;
   }
 
@@ -495,23 +679,35 @@ header.shrink .site-logo img {
     margin-left: 40px;
   }
 
-  .swiper-pagination {
+  .design-swiper-pagination {
     top: -100px !important;
     height: 4rem;
   }
 
-  .swiper-pagination-bullet {
+  .design-swiper-pagination .swiper-pagination-bullet {
     width: 4rem;
     height: 4rem;
     line-height: 4rem;
     font-size: 1.2rem;
   }
 
-  .swiper-slide img {
+  .myDesignSwiper .swiper-slide img {
     display: inline-block;
     max-width: 70%;
     object-fit: cover;
     padding-top: 3rem;
+  }
+
+  .single-cover .slide-1 h1 {
+    line-height: 3.5rem;
+  }
+  .gallery--grid {
+    grid-gap: 20px 70px;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 0;
+  }
+  .our_tech_swiper .swiper-image {
+    display: none;
   }
 }
 
@@ -538,7 +734,7 @@ header.shrink .site-logo img {
   .intro-section svg {
     margin-top: 0;
   }
-  
+
   .intro-section h1,
   .section-title {
     font-size: 1.5rem;
@@ -562,7 +758,7 @@ header.shrink .site-logo img {
   }
 
   .about-subtitle,
-  .swiper-slide h2 {
+  .myDesignSwiper .swiper-slide h2 {
     font-size: 1.2rem;
   }
 
@@ -570,11 +766,11 @@ header.shrink .site-logo img {
     padding-bottom: 5rem;
   }
 
-  .swiper-wrapper {
+  .myDesignSwiper .swiper-wrapper {
     padding-top: 2rem;
   }
 
-  .swiper-slide img {
+  .myDesignSwiper .swiper-slide img {
     margin-top: 2rem;
   }
 
@@ -586,12 +782,12 @@ header.shrink .site-logo img {
     padding-bottom: 4rem;
   }
 
-  .swiper-pagination {
+  .design-swiper-pagination {
     top: -90px !important;
     height: 3rem;
   }
 
-  .swiper-pagination-bullet {
+  .design-swiper-pagination .swiper-pagination-bullet {
     width: 2.5rem;
     height: 2.5rem;
     line-height: 2.5rem;
@@ -600,5 +796,96 @@ header.shrink .site-logo img {
 
   .footer-section p {
     margin-bottom: 2rem;
+  }
+
+  .single-cover .slide-1 h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .py-10 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  #about-us-info img {
+    margin-top: 4rem;
+  }
+  .about_us__title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .about_us__text {
+    font-size: 0.9rem;
+  }
+  .overflow-hidden {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .gallery--grid {
+    grid-gap: 20px 70px;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 0;
+  }
+  .card__item::before {
+    bottom: 70px;
+    left: -25px;
+    right: 25px;
+    top: 0;
+  }
+  .card__item {
+    padding-bottom: 2.75rem;
+    padding-top: 40px;
+  }
+  .card__block--main {
+    min-height: 280px;
+    padding: 20px;
+    padding-top: 50px;
+  }
+  .card__element--user-img img,
+  .card__element--user-img svg {
+    --size: 60px;
+    left: 15px;
+    top: calc(-1 * (var(--size) / 2));
+    width: var(--size);
+  }
+  .card__title {
+    font-size: 1.3rem;
+  }
+  .card__subtitle {
+    color: hsl(210, 5%, 41%);
+    font-size: 1rem;
+    margin-top: 0.33rem;
+  }
+  .card__text {
+    font-size: 0.9rem;
+  }
+  .like {
+    padding: 0.4rem;
+  }
+  .like svg {
+    height: 15px;
+    width: 15px;
+  }
+  .our_tech_swiper {
+    margin-top: 3rem;
+  }
+  .our_tech_swiper .swiper-slide {
+    min-height: 50vh;
+    padding: 40px;
+    gap: 45px;
+  }
+  .our_tech_swiper .swiper__title {
+    font-size: 1.3rem;
+  }
+  .our_tech_swiper .swiper__text {
+    font-size: 0.9rem;
+  }
+  .our_tech_swiper .swiper-image {
+    display: none;
+  }
+  .our_value__title {
+    font-size: 1.75rem;
+  }
+  .our_value__subtitle {
+    font-size: 1.3rem;
   }
 }
