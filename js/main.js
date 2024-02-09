@@ -272,7 +272,7 @@ jQuery(document).ready(function($) {
   var OnePageNavigation = function() {
     var navToggler = $('.site-menu-toggle');
    	$("body").on("click", ".main-menu li a[href^='#'], .smoothscroll[href^='#'], .site-mobile-menu .site-nav-wrap li a", function(e) {
-      e.preventDefault();
+    //   e.preventDefault();
 
       var hash = this.hash;
 
@@ -294,7 +294,7 @@ jQuery(document).ready(function($) {
 
   		var st = $(this).scrollTop();
 
-  		if (st > 100) {
+  		if (st > 85) {
   			$('.js-sticky-header').addClass('shrink');
   		} else {
   			$('.js-sticky-header').removeClass('shrink');

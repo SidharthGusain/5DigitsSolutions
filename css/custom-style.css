@@ -581,19 +581,25 @@ header.shrink .site-logo img {
   color: #fff;
   padding: 65px 90px;
   gap: 95px;
+  position: sticky;
+  margin-bottom: 4rem;
 }
 
 #our_tech_swiper01 {
   background-color: #d8caff;
+  top: 15rem;
 }
 #our_tech_swiper02 {
   background-color: #a7e9dd;
+  top: 19rem;
 }
 #our_tech_swiper03 {
   background-color: #ffdbdf;
+  top: 23rem;
 }
 #our_tech_swiper04 {
   background-color: #d2fba4;
+  top: 27rem;
 }
 
 .our_tech_swiper .swiper__title {
@@ -816,10 +822,6 @@ header.shrink .site-logo img {
   .about_us__text {
     font-size: 0.9rem;
   }
-  .overflow-hidden {
-    overflow-y: hidden;
-    overflow-x: hidden;
-  }
   .gallery--grid {
     grid-gap: 20px 70px;
     grid-template-columns: repeat(1, 1fr);
@@ -872,6 +874,18 @@ header.shrink .site-logo img {
     min-height: 50vh;
     padding: 40px;
     gap: 45px;
+  }
+  #our_tech_swiper01 {
+    top: 100px;
+  }
+  #our_tech_swiper02 {
+    top: 150px;
+  }
+  #our_tech_swiper03 {
+    top: 200px;
+  }
+  #our_tech_swiper04 {
+    top: 250px;
   }
   .our_tech_swiper .swiper__title {
     font-size: 1.3rem;
