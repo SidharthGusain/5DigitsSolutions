@@ -54,9 +54,6 @@
                 <li>
                   <a href="about.html" class="nav-link">About</a>
                 </li>
-                <li>
-                  <a href="#" class="nav-link">Contact</a>
-                </li>
               </ul>
             </nav>
           </div>
@@ -89,9 +86,13 @@
             <div class="col-12">
               <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 mb-4">
+                  <!-- <h1 data-aos="fade-up" data-aos-delay="100">
+                    Transforming <span class="text-blue">Complexity</span> into <span class="text-blue">Clarity</span>
+                  </h1> -->
                   <h1 data-aos="fade-up" data-aos-delay="100">
-                    Transforming <span class="text-blue">Complexity</span> into <span
-                      class="text-blue">Clarity</span>
+                    Transforming <br />
+                    <span class="text-blue" id="typewriter"></span>
+                    <span id="cursor">|</span>
                   </h1>
                   <p class="mb-4" data-aos="fade-up" data-aos-delay="200">
                     Unlocking Simplicity in a Digital World, Crafting Intuitive Experiences for Your Seamless Success.
@@ -1191,19 +1192,15 @@
       </div>
     </div>
 
-
-
-
     <footer class="footer-section bg-white">
       <div class="container">
         <div class="row">
           <div class="col-md-5">
-            <h3>About 5 Digits Solution</h3>
+            <h3>About 5Digits Solution</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
-              consectetur ut hic ipsum et veritatis corrupti. Itaque eius
-              soluta optio dolorum temporibus in, atque, quos fugit sunt sit
-              quaerat dicta.
+              We are a dynamic team of skilled software developers, united by our passion for innovation and excellence.
+              With members from diverse backgrounds in the United Kingdom and India, each specializing in various
+              technologies such as AI, machine learning, robotics, and data analysis.
             </p>
           </div>
 
@@ -1212,7 +1209,6 @@
             <ul class="list-unstyled footer-links ">
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="#">Contact</a></li>
               <li><a href="#">Request a Quote</a></li>
             </ul>
           </div>
@@ -1251,6 +1247,9 @@
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
   <script src="js/main.js"></script>
 
   <script>
@@ -1268,6 +1267,54 @@
         },
       },
     });
+  </script>
+
+  <script>
+    const words = ['Complexity', 'Into Clarity'];
+
+    // main timeline
+    let mainTimeline = gsap.timeline({
+      repeat: -1
+    });
+
+    //for each word, create a new timeline, use the Text plugin, then append that timeline to the main one
+    words.forEach(word => {
+      let textTimeline = gsap.timeline({
+        repeat: 1,
+        yoyo: true,
+        repeatDelay: 6
+      });
+
+      textTimeline.to('#typewriter', {
+        text: word,
+        duration: 1,
+        onUpdate: () => {
+          cursorTimeline.restart()
+          cursorTimeline.pause()
+        },
+        onComplete: () => {
+          cursorTimeline.play()
+        }
+      });
+
+      mainTimeline.add(textTimeline);
+    });
+
+    // blinking cursor
+    let cursorTimeline = gsap.timeline({
+      repeat: -1,
+      repeatDelay: .8
+    })
+
+    cursorTimeline.to('#cursor', {
+      opacity: 1,
+      duration: 0
+    }).to('#cursor', {
+      opacity: 0,
+      duration: 0,
+      delay: .8
+    })
+
   </script>
 
 </body>

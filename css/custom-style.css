@@ -461,17 +461,51 @@ header.shrink .site-logo img {
   display: grid;
   grid-auto-flow: row dense;
   grid-gap: 20px 70px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   padding-left: 35px;
   margin-top: 3rem;
+  grid-template-areas:
+    "a a b b"
+    "c c d d"
+    ". e e .";
+}
+
+.gallery__item:nth-child(1) {
+  grid-area: a;
+}
+.gallery__item:nth-child(2) {
+  grid-area: b;
+}
+.gallery__item:nth-child(3) {
+  grid-area: c;
+}
+.gallery__item:nth-child(4) {
+  grid-area: d;
+}
+.gallery__item:nth-child(5) {
+  grid-area: e;
+}
+
+.gallery__item.grad1 .card__item::before {
+  background-image: var(--gradient-1);
+}
+.gallery__item.grad1 .user-svg01 {
+  background-color: #ffd3a5;
 }
 
 .gallery__item.grad2 .card__item::before {
   background-image: var(--gradient-2);
 }
+.gallery__item.grad2 .user-svg02 {
+  background-color: #dec3fc;
+}
 
 .gallery__item.grad3 .card__item::before {
   background-image: var(--gradient-3);
+}
+.gallery__item.grad3 .user-svg03 {
+  background-color: #9ceac8;
 }
 
 .card__item {
@@ -479,7 +513,6 @@ header.shrink .site-logo img {
 }
 
 .card__item::before {
-  background-image: var(--gradient-1);
   border-radius: 15px;
   box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.1);
   bottom: 70px;
@@ -493,6 +526,7 @@ header.shrink .site-logo img {
 .card__item {
   padding-bottom: 2.75rem;
   padding-top: 60px;
+  height: 100%;
 }
 
 .card__block--main {
@@ -504,6 +538,7 @@ header.shrink .site-logo img {
   padding-top: 50px;
   position: relative;
   z-index: 2;
+  height: 100%;
 }
 
 .card__element--user-img img,
@@ -520,18 +555,6 @@ header.shrink .site-logo img {
 
 .card__element--user-img svg {
   fill: #000;
-}
-
-#user-svg01 {
-  background-color: #ffd3a5;
-}
-
-#user-svg02 {
-  background-color: #dec3fc;
-}
-
-#user-svg03 {
-  background-color: #9ceac8;
 }
 
 .card__title {
@@ -611,13 +634,20 @@ header.shrink .site-logo img {
   color: #666;
   font-size: 1.1rem;
 }
-
-@media (min-width: 1980px) {
-  .slide-1 .container {
-    max-width: calc(100% - 10rem);
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
+.magneto {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #212121;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.magneto .magneto-text {
+  font-size: 1.5rem;
 }
 
 @media (min-width: 1400px) {
@@ -625,6 +655,60 @@ header.shrink .site-logo img {
     max-width: calc(100% - 10rem);
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+  .myDesignSwiper {
+    padding-top: 5rem;
+  }
+
+  #design-process-section .container {
+    max-width: 100%;
+  }
+
+  .myDesignSwiper .swiper-slide,
+  .design-swiper-pagination {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+}
+@media (min-width: 1650px) {
+  #design-process-section .container {
+    max-width: 100%;
+  }
+
+  .myDesignSwiper .swiper-slide,
+  .design-swiper-pagination {
+    padding-left: 23rem;
+    padding-right: 23rem;
+  }
+}
+
+@media (min-width: 1980px) {
+  .slide-1 .container {
+    max-width: calc(100% - 10rem);
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  #design-process-section .container {
+    max-width: 100%;
+  }
+
+  .myDesignSwiper .swiper-slide,
+  .design-swiper-pagination {
+    padding-left: 30rem;
+    padding-right: 30rem;
+  }
+}
+
+@media (min-width: 2500px) {
+  #design-process-section .container {
+    max-width: 100%;
+  }
+
+  .myDesignSwiper .swiper-slide,
+  .design-swiper-pagination {
+    padding-left: 45rem;
+    padding-right: 45rem;
   }
 }
 
@@ -710,6 +794,13 @@ header.shrink .site-logo img {
   .gallery--grid {
     grid-gap: 20px 70px;
     grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e";
     margin-top: 0;
   }
   .our_tech_swiper .swiper-image {
@@ -822,11 +913,6 @@ header.shrink .site-logo img {
   .about_us__text {
     font-size: 0.9rem;
   }
-  .gallery--grid {
-    grid-gap: 20px 70px;
-    grid-template-columns: repeat(1, 1fr);
-    margin-top: 0;
-  }
   .card__item::before {
     bottom: 70px;
     left: -25px;
@@ -896,8 +982,12 @@ header.shrink .site-logo img {
   .our_tech_swiper .swiper-image {
     display: none;
   }
-  .our_value__title {
-    font-size: 1.75rem;
+  .magneto {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .magneto .magneto-text {
+    font-size: 1rem;
   }
   .our_value__subtitle {
     font-size: 1.3rem;
